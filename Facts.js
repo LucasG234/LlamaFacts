@@ -1,4 +1,4 @@
-var FACTS = [
+﻿var FACTS = [
 
     "Llamas are large animals. They can be 6 feet tall and reach between 280 and 450 pounds.",
     "Llamas can carry about a quarter of their body weight, so a 400-pound male llama can carry about 100 pounds on a trek of 10 to 12 miles with no problem.",
@@ -25,5 +25,15 @@ var FACTS = [
     "Similarly to humans, Llamas do not have a specific mating period but can produce offspring all year round.",
     "Llamas contribute much more than transportation to the human communities in which they live. Leather is made from their hides, and their wool is crafted into ropes, rugs, and fabrics. Llama dung makes great fuel—and fertilizer. In fact, it may have helped the Incans grow corn and survive in the Andes."
     "Despite their large size, llamas feet have on average less of an impact on the ground than a hiker’s boots."
-    
-]
+    "The llama is the national symbol of Peru and appears on many tourist products as well as coins and stamps.",
+    "Llamas live at altitudes up to 13,000 feet (4000 meters) above sea level. To compensate, their specialized blood has a high amount of red blood cells which allow for more oxygen absorption.",
+    "To help with glare and avoid snow-blindness, llamas' eyes are designed with special sunshades built in that look like a curtain of ruffles hanging in the eyeball and close like Venetian blinds when needed.",
+    "Images of llamas appear throughout the art of the Andes culture dating back thousands of years, occuring almost as often as images of the sun (which contained major religious symbolism.",
+    "Unlike the camel, llamas require fresh water daily (though they do need considerably less than a horse or cow of comparable size).",
+    "As a testimony to the popularity of these creatures, an activity known as \"llama trekking\" is offered by some llama farms, where visitors pay a fee to lead a llama around the property on a small nature walk.",
+    "In nature, dominant male llamas will gather harems of females and guard them from the intrusion of other males.",
+    "Llamas are so intelligent that they are known to learn simple tasks, such as fetching an object, with only a few repitions (far fewer than a dog would take).",
+    "A single male llama introduced to a herd of sheep, alpaca, or similar smaller herding animals will quickly become attached, claim the herd as their own, and defend them from animals such as foxes and coyotes.",
+    "Occasionally, ranchers have reported stories of scuffles overheard in the night, and the trampled bodies of coyotes, wolves and even small bears being found in the llama pen in the morning -Amazing!"
+
+];
