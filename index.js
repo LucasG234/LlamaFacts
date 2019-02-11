@@ -1,5 +1,6 @@
 var express = require("express");
 var request = require("request");
+var facts = require("./facts.js").getFacts();
 require("dotenv").load();
 
 //TODO: Verify slack communication with signing secret
@@ -48,8 +49,10 @@ app.get("/oauth", function(req, res) {
 
 //Simple test slash command
 app.post("/test", function(req, res) {
+
+    var random = Math.floor(Math.random() * facts.length)
     res.send({
         "reponse_type": "in_channel",
-        "text": "Command successful"
+        "text": "Llama Fact " + (random+1) +": " + facts[random]
     });
 })

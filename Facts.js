@@ -1,4 +1,12 @@
-﻿var FACTS = [
+module.exports = { getFacts: function() {
+    return FACTS;
+}};
+
+var getFacts = function() {
+    return FACTS;
+}
+
+var FACTS = [
 
     "Llamas are large animals. They can be 6 feet tall and reach between 280 and 450 pounds.",
     "Llamas can carry about a quarter of their body weight, so a 400-pound male llama can carry about 100 pounds on a trek of 10 to 12 miles with no problem.",
@@ -23,8 +31,8 @@
     "Llamas communicate with each other through a variety of ear, tail and body postures. They also have a range of vocalisations including soft hums and a shrill alarm call to warn others of danger.",
     "Llamas are herbivores. Llamas eat grass, hay, and grain, and as browsers, also like bark and twigs. For treats they love cut up apples and carrots.",
     "Similarly to humans, Llamas do not have a specific mating period but can produce offspring all year round.",
-    "Llamas contribute much more than transportation to the human communities in which they live. Leather is made from their hides, and their wool is crafted into ropes, rugs, and fabrics. Llama dung makes great fuel—and fertilizer. In fact, it may have helped the Incans grow corn and survive in the Andes."
-    "Despite their large size, llamas feet have on average less of an impact on the ground than a hiker’s boots."
+    "Llamas contribute much more than transportation to the human communities in which they live. Leather is made from their hides, and their wool is crafted into ropes, rugs, and fabrics. Llama dung makes great fuel—and fertilizer. In fact, it may have helped the Incans grow corn and survive in the Andes.",
+    "Despite their large size, llamas feet have on average less of an impact on the ground than a hiker’s boots.",
     "The llama is the national symbol of Peru and appears on many tourist products as well as coins and stamps.",
     "Llamas live at altitudes up to 13,000 feet (4000 meters) above sea level. To compensate, their specialized blood has a high amount of red blood cells which allow for more oxygen absorption.",
     "To help with glare and avoid snow-blindness, llamas' eyes are designed with special sunshades built in that look like a curtain of ruffles hanging in the eyeball and close like Venetian blinds when needed.",
