@@ -1,6 +1,6 @@
-var express = require('express');
-var request = require('request');
-require('dotenv').load();
+var express = require("express");
+var request = require("request");
+require("dotenv").load();
 
 //TODO: Verify slack communication with signing secret
 
@@ -13,17 +13,17 @@ var app = express();
 
 app.listen(PORT, function() {
     if(secret&&clientId)
-        console.log('ID and Secret successfully read');
-    console.log('App initialized on port ' + PORT);
+        console.log("ID and Secret successfully read");
+    console.log("App initialized on port " + PORT);
 })
 
 //Route for GET requests to root address
-app.get('/', function(req, res) {
-    res.send('Connection established through path: ' + req.url);
+app.get("/", function(req, res) {
+    res.send("Connection established through path: " + req.url);
 })
 
 //Route for GET requests through Slack oAuth process
-app.get('/oauth', function(req, res) {
+app.get("/oauth", function(req, res) {
     //If request doesn't contain required code, throw an error
     if(!req.questy.code) {
         req.status(500);
@@ -31,11 +31,11 @@ app.get('/oauth', function(req, res) {
         console.log("Problem receiving code");
     }
     else {
-        //GET call to Slack's oauth endpoint
+        //GET call to Slack"s oauth endpoint
         request({
-            url: 'https://slack.com/api/oauth.access',
+            url: "https://slack.com/api/oauth.access",
             qs: {code: req.query.code, client_id: clientId, client_secret: clientSecret},
-            method: 'GET',
+            method: "GET",
         }, function(error, response, body) {
             if(error) {
                 console.log(error);
@@ -47,6 +47,9 @@ app.get('/oauth', function(req, res) {
 });
 
 //Simple test slash command
-app.post('/test', function(req, res) {
-    res.send('Command working properly');
+app.post("/test", function(req, res) {
+    res.send({
+        "reponse_type": "in_channel",
+        "text": "Command successful"
+    });
 })
