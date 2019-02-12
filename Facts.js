@@ -2,10 +2,6 @@ module.exports = { getFacts: function() {
     return FACTS;
 }};
 
-var getFacts = function() {
-    return FACTS;
-}
-
 var FACTS = [
 
     "Llamas are large animals. They can be 6 feet tall and reach between 280 and 450 pounds.",

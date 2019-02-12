@@ -10,18 +10,41 @@ var clientId = process.env.CLIENTID;
 var secret = process.env.SECRET;
 const PORT = process.env.PORT || 3000;
 
+//Returns a random fact from Facts.js file
+var getFact = function() {
+    var random = Math.floor(Math.random() * facts.length);
+    return "Llama Fact " + (random+1) +": " + facts[random];
+};
+
+//POST request to send message without slash command
+var sendFact = function(url) {
+    request.post({
+        url: url,
+        headers: {"Content-type": "application/json"},
+        "text": "Hello World!"
+        }, function(err, res, body) {
+            console.log(err);
+            console.log(res);
+            console.log(body);
+    });
+};
+
 var app = express();
+
+//test the request feature
+sendFact("https://hooks.slack.com/services/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");
+
 
 app.listen(PORT, function() {
     if(secret&&clientId)
         console.log("ID and Secret successfully read");
     console.log("App initialized on port " + PORT);
-})
+});
 
 //Route for GET requests to root address
 app.get("/", function(req, res) {
     res.send("Connection established through path: " + req.url);
-})
+});
 
 //Route for GET requests through Slack oAuth process
 app.get("/oauth", function(req, res) {
@@ -47,12 +70,10 @@ app.get("/oauth", function(req, res) {
     }
 });
 
-//Simple test slash command
-app.post("/test", function(req, res) {
-
-    var random = Math.floor(Math.random() * facts.length)
+//Route for POST requests through slash command
+app.post("/llamafact", function(req, res) {
     res.send({
-        "reponse_type": "in_channel",
-        "text": "Llama Fact " + (random+1) +": " + facts[random]
+        "response_type": "in_channel",
+        "text": getFact()
     });
-})
+});
