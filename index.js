@@ -21,13 +21,13 @@ var sendFact = function(url) {
     request.post({
         url: url,
         headers: {"Content-type": "application/json"},
-        "text": "Hello World!"
+        body: '{"text":"' + getFact() + '"}'
         }, function(err, res, body) {
-            console.log(err);
-            console.log(res);
             console.log(body);
     });
 };
+
+console.log('{"text":"Hello World"}');
 
 var app = express();
 
