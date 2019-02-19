@@ -52,10 +52,17 @@ app.get("/oauth", function(req, res) {
     }
 });
 
-//Route for POST requests through slash command
-app.post("/llamafact", function(req, res) {
+//Route for POST requests through slack slash command
+app.post("/api/slack", function(req, res) {
     res.send({
         "response_type": "in_channel",
         "text": getFact()
     });
+});
+
+//Route for direct GET requests
+app.get("/api/fact", function(req, res) {
+    res.send(
+        getFact()
+    );
 });
