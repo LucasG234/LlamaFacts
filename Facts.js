@@ -7,7 +7,6 @@ var getFacts = function() {
 }
 
 var FACTS = [
-
     "Llamas are large animals. They can be 6 feet tall and reach between 280 and 450 pounds.",
     "Llamas can carry about a quarter of their body weight, so a 400-pound male llama can carry about 100 pounds on a trek of 10 to 12 miles with no problem.",
     "Llamas have excellent sight, smell and hearing, which are used for detection of potential danger.",

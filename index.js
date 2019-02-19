@@ -11,9 +11,18 @@ var secret = process.env.SECRET;
 const PORT = process.env.PORT || 3000;
 
 var getFact = function() {
-    var random = Math.floor(Math.random() * facts.length);
+    let random = Math.floor(Math.random() * facts.length);
     return "Llama Fact " + (random+1) +": " + facts[random];
 };
+
+var getFacts = function(num) {
+    let out = [];
+    for(let i = 0; i < num; i++)
+    {
+        out.push(getFact());
+    }
+    return out;
+}
 
 var app = express();
 
@@ -56,13 +65,13 @@ app.get("/oauth", function(req, res) {
 app.post("/api/slack", function(req, res) {
     res.send({
         "response_type": "in_channel",
-        "text": getFact()
+        "text": getFact(1)
     });
 });
 
-//Route for direct GET requests
-app.get("/api/fact", function(req, res) {
+//Route for direct GET requests to get multiple facts
+app.get("/api/facts", function(req, res) {
     res.send(
-        getFact()
-    );
+        getFacts(req.query.number)
+    )
 });
