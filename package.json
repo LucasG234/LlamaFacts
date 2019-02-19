@@ -1,0 +1,19 @@
+{
+    "name": "llama-facts",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/LucasG234/LlamaFacts"
+    },
+    "scripts": {
+        "start": "node index.js"
+    },
+    "author": "Lucas Gates",
+    "license": "MIT",
+    "dependencies": {
+        "express": "~4.16.4",
+        "request": "~2.88.0"
+    }
+}
