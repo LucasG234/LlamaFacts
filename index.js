@@ -10,18 +10,31 @@ var clientId = process.env.CLIENTID;
 var secret = process.env.SECRET;
 const PORT = process.env.PORT || 3000;
 
+//return single fact not in array for slack api
 var getFact = function() {
-    let random = Math.floor(Math.random() * facts.length);
-    return "Llama Fact " + (random+1) +": " + facts[random];
+    return facts[Math.floor(Math.random() * facts.length)];
 };
 
+//returns facts in array (always used for direct calls)
 var getFacts = function(num) {
     let out = [];
+    shuffle(facts);
     for(let i = 0; i < num; i++)
     {
-        out.push(getFact());
+        out.push(facts[i]);
     }
     return out;
+}
+
+//shuffles the array passed
+var shuffle = function(arr) {
+    let j, x, i;
+    for(i = arr.length-1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i+1));
+        x = arr[i];
+        arr[i] = arr[j];
+        arr[j] = x;
+    }
 }
 
 var app = express();
@@ -71,7 +84,10 @@ app.post("/api/slack", function(req, res) {
 
 //Route for direct GET requests to get multiple facts
 app.get("/api/facts", function(req, res) {
-    res.send(
-        getFacts(req.query.number)
-    )
+    let number = (req.query.number > facts.length) ? facts.length : req.query.number;
+    res.send({
+        "number": number,
+        "facts": getFacts(number),
+        "success": true
+    })
 });
